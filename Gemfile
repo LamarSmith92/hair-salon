@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 
+
+
+gem 'thin'
 # Use delayed job for running background jobs
 gem 'delayed_job_active_record'
 
