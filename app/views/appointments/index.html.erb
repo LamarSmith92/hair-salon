@@ -1,2 +1,45 @@
-<h1>Appointments#index</h1>
-<p>Find me in app/views/appointments/index.html.erb</p>
+
+
+
+
+<%- model_class = Appointment -%>
+<div class="page-header">
+<h1>Appointments</h1>
+</div>
+<table class="table">
+<thead>
+<tr class="active">
+<th><%= model_class.human_attribute_name(:id) %></th>
+
+<th><%= model_class.human_attribute_name(:first_name) %></th>
+<th><%= model_class.human_attribute_name(:phone) %></th>
+<th><%= model_class.human_attribute_name(:date) %></th>
+<th><%= model_class.human_attribute_name(:created_at) %></th>
+<th><%=t '.actions', :default => t("helpers.actions") %></th>
+</tr>
+</thead>
+<tbody>
+<% @appointments.each do |appointment| %>
+<tr class="info">
+<td><%= link_to appointment.id, appointment_path(appointment) %></td>
+<td><%= appointment.first_name %></td>
+<td><%= appointment.phone %></td>
+<td><%= appointment.date.strftime("%B %d, %Y at %H:%M %p")%></td>
+<td><%=appointment.created_at %></td>
+<td>
+  <%= link_to "Edit",
+              edit_appointment_path(appointment), :class => 'btn btn-default btn-xs' %>
+  <%= link_to "Delete",
+              appointment_path(appointment),
+              :method => :delete,
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-xs btn-danger' %>
+</td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to "New",
+    new_appointment_path,
+    :class => 'btn btn-primary' %>

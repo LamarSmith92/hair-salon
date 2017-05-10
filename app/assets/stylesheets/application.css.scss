@@ -12,4 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker
+*= require bootstrap-datetimepicker
  */
+ @import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-datetimepicker';
+@import "normalize";
