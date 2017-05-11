@@ -12,10 +12,14 @@
  *
  *= require_tree .
  *= require_self
+
  *= require bootstrap-datepicker
 *= require bootstrap-datetimepicker
+*= require devise_bootstrap_views
+
  */
- @import 'bootstrap-sprockets';
+
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
 @import "normalize";
+@import "styles";
