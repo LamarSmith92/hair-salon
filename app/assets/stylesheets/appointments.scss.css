@@ -143,3 +143,13 @@ fieldset {
 :-ms-input-placeholder {
   color: #888;
 }
+.headForApt{
+  font-weight: 400;
+  text-align: center;
+  font-family: 'Love Ya Like A Sister';
+  color:#cc0024;
+  font-size: 60px;
+}
+.info{
+  color: black;
+}

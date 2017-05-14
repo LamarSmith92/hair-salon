@@ -1,5 +1,7 @@
 class AppointmentsController < ApplicationController
+
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+
   def index
     @appointments = Appointment.all
     if @appointments.length == 0
@@ -9,24 +11,25 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
-
   end
+
   def create
   @appointment = Appointment.new(appointment_params)
 
-    respond_to do |format|
       if @appointment.save
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        format.json { render :show, status: :created, location: @appointment }
-      else
-        format.html { render :new }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+        flash[:success] = "Welcome to the Sample App!"
+      redirect_to root_path
+    else
+  render 'new'
+
+end
+
+end
+
   def show
     @appointment = Appointment.find(params[:id])
   end
+
   def destroy
       @appointment.destroy
       respond_to do |format|
@@ -36,8 +39,7 @@ class AppointmentsController < ApplicationController
     end
 
 private
-  # Use callbacks to share common setup or constraints between actions.
-  # See above ---> before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+
   def set_appointment
     @appointment = Appointment.find(params[:id])
   end
