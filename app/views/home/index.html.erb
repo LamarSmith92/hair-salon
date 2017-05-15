@@ -6,7 +6,7 @@
 <div class="button">Sisterz Beauty Salon</div>
 <link async href="http://fonts.googleapis.com/css?family=Warnes" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 
-
+<img src="https://image.ibb.co/m5VGBQ/afro.png" alt="afro" border="0">
 <div class="intro-header">
   <div class="container">
     <div class="row">
@@ -19,12 +19,17 @@
                             :class => 'btn btn-success btn-lg' %>
           </li>
           <li>
-            <%= link_to raw("<i class=\"fa fa-heart\">		&nbsp;&nbsp;Styles		&nbsp;&nbsp;</i>"),
+            <%= link_to raw("<i class=\"fa fa-heart\">		&nbsp;&nbsp;&nbsp;Styles		&nbsp;&nbsp;&nbsp;</i>"),
                                 styles_path,
-                                :class => 'btn btn-primary btn-lg' %>
+                                :class => 'btn btn-danger btn-lg' %>
           </li>
           <li>
-            <%= link_to raw("<i class=\"fa fa-address-card-o\">	&nbsp;	&nbsp;About	&nbsp;	&nbsp;</i>"),
+            <%= link_to raw("<i class=\"fa fa-user-plus\">	New Client	</i>"),
+                              new_client_path,
+                              :class => 'btn btn-danger btn-lg' %>
+          </li>
+          <li>
+            <%= link_to raw("<i class=\"fa fa-address-card-o\">	&nbsp;&nbsp;	&nbsp;About	&nbsp;&nbsp;	&nbsp;</i>"),
                               about_path,
                               :class => 'btn btn-danger btn-lg' %>
           </li>

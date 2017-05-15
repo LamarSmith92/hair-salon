@@ -1,7 +1,15 @@
+<div class="jumbotron">
+    <div class="container push-spaces">
+      <p id="notice"><%= notice %></p>
+      <p class ="client_show">
+        Hello,
+      <%= @client.name %><br>
+      Thank You For Registering!
 
-<p id="notice"><%= notice %></p>
-<%= @client.name %>
-<%= @client.email %>
+      <br>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+      <%= link_to 'Book Now', new_appointment_path, class: 'btn btn-primary'%>
+      <%= link_to 'Back', root_path, class: 'btn btn-primary'%>
+      </p>
+    </div>
+</div>
