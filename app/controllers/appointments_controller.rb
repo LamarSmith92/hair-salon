@@ -15,11 +15,11 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-  
+
   @appointment = Appointment.new(appointment_params)
 
       if @appointment.save
-        flash[:success] = "Your Appointment has been set for" + @date
+        flash[:success] = "Your Appointment has been set !"
       redirect_to root_path
     else
   render 'new'
