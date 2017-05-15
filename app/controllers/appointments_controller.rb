@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @client = Client.find(params[:client_id])
+  
   @appointment = Appointment.new(appointment_params)
 
       if @appointment.save
