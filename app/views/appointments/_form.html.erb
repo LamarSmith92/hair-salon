@@ -9,11 +9,18 @@
        <%= f.text_field :last_name, :placeholder=> 'Last Name',:class => 'form-control' %>
     </fieldset>
     <fieldset>
+       <%= f.text_field :email, :placeholder=> 'Email',:class => 'form-control' %>
+    </fieldset>
+    <fieldset>
         <%= f.text_field :phone, :placeholder=> 'Phone', :class => 'form-control' %>
     </fieldset>
     <fieldset>
 
-       <%= f.datetime_field :date, class:"form-control" %>
+       <%= f.date_field :date, class: 'form-control'%>
+     </fieldset>
+     <fieldset>
+       <%= f.time_select :date, { prompt: {hour: 'Choose hour', minute: 'Choose minute'}, minute_step: 15 }, { class: 'form-control' } %>
+
 
     </fieldset>
     <fieldset>

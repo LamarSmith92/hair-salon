@@ -2,6 +2,7 @@ class AppointmentsController < ApplicationController
 
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
+
   def index
     @appointments = Appointment.all
     if @appointments.length == 0
@@ -14,10 +15,11 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    @client = Client.find(params[:client_id])
   @appointment = Appointment.new(appointment_params)
 
       if @appointment.save
-        flash[:success] = "Welcome to the Sample App!"
+        flash[:success] = "Your Appointment has been set for" + @date
       redirect_to root_path
     else
   render 'new'

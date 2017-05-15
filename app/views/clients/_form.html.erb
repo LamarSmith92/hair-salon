@@ -1,0 +1,21 @@
+<div class="container">
+  <%= form_for @client, :html => { :class => "form-horizontal appointment", id:"contact" } do |f| %>
+    <h3>Client sign up form!</h3>
+  <h4>Get Started, Get Booked!</h4>
+    <fieldset>
+       <%= f.text_field :name, :placeholder=> 'Name', :class => 'form-control' %>
+    </fieldset>
+    <fieldset>
+       <%= f.text_field :email, :placeholder=> 'Email',:class => 'form-control' %>
+    </fieldset>
+    <fieldset>
+       <%= f.text_field :phone_number, :placeholder=> 'Phone Number',:class => 'form-control' %>
+    </fieldset>
+
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                    root_path, :class => 'btn btn-default' %>    </fieldset>
+
+  </form>
+  <% end %>
+</div>
