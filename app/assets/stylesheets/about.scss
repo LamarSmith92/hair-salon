@@ -1,3 +1,119 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    /* Typography Declarations */
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.masthead-intro,
+.masthead-heading,
+.content-footer {
+  text-align: center; /*Centers text horizontally*/
+}
+
+
+
+.masthead-intro {
+  margin-bottom: 0.1em;
+  color: white;
+  font-family: "Gentium Book Basic", Georgia, serif;
+  font-size: 2em;
+  text-shadow: 1px 1px #D465A6;
+}
+
+.masthead-heading {
+  margin-top: -0.2em;
+  color: white;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 6em;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: 1.5px 4px #D465A6;
+}
+
+.introduction,
+.location,
+.questions {
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+}
+.introduction{
+  color: #cc0024;
+  background-color: rgba( 255,255,255, 0.9);
+}
+.introduction,
+.location,
+.questions,
+.content-footer p {
+  font-weight: 600;
+}
+
+.questions h2 {
+  font-size: 1em;
+  font-family: "Gentium Book Basic", Georgia, serif;
+  color: #D465A6;
+}
+
+.questions a {
+  text-decoration: none;
+  color: #C9619E;
+}
+
+.content-footer {
+  background-color: #BF9381;
+  margin-top: 3em;
+  padding: 2em;
+  color: #F0EBEA;
+}
+
+.content-footer a {
+  text-decoration: none;
+  color: #C9619E;
+  font-weight: bold;
+}
+
+.content-footer span {
+  color: #C2BFC0;
+}
+
+.social {
+  padding: 0;
+  /*The links refused to center themselves without this!*/
+}
+
+.social > li {
+  display: inline-block;
+  padding: 0.3em;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .masthead {
+        padding: 3em 0;
+    }
+
+    .masthead-heading {
+        font-size: 3em;
+    }
+
+    .content-footer {
+      margin-top: 2em;
+      padding: 0.5em;
+    }
+
+    .masthead-intro,
+    .masthead-heading,
+    .content-footer,
+    .introduction,
+    .location,
+    .questions {
+      text-align: center; /*Centers text horizontally*/
+    }
+}
