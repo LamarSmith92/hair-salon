@@ -41,11 +41,8 @@ ActiveRecord::Schema.define(version: 20170516013852) do
     t.text     "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "phonenum"
-    t.integer  "user_id"
     t.integer  "style_id"
     t.index ["style_id"], name: "index_appointments_on_style_id", using: :btree
-    t.index ["user_id"], name: "index_appointments_on_user_id", using: :btree
   end
 
   create_table "clients", force: :cascade do |t|
@@ -97,12 +94,10 @@ ActiveRecord::Schema.define(version: 20170516013852) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.boolean  "admin"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "appointments", "styles"
-  add_foreign_key "appointments", "users"
   add_foreign_key "clients", "users"
 end
