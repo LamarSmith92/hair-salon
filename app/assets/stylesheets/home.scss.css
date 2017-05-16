@@ -120,7 +120,7 @@ body{
   box-sizing: border-box;
   padding: 10px;
   border: none;
-  font: normal 20px/normal "Warnes", Helvetica, sans-serif;
+  font: normal 20px/normal "Warnes";
   color: rgba(255,255,255,1);
   text-decoration: normal;
   text-align: center;
