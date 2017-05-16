@@ -42,10 +42,10 @@ This page allows a client/user to book an appointment and select the best date a
 3. HTML5
 4. SASS
 5. CSS3
-6. Gems:
-7.Bootstrap
-8.Normalize
-9.Devise
+6. Gems
+7. Bootstrap
+8. Normalize
+9. Devise
 
 ## User Stories
 
