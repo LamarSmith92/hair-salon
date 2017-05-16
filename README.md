@@ -70,6 +70,7 @@ Initial Wireframes things changed as I progressed through the project.
 
 Flashing Headers:
 
+```
 .button_two {
   display: inline;
   -webkit-box-sizing: border-box;
@@ -90,19 +91,22 @@ Flashing Headers:
   -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-
+```
 Flash Notices
+```
   def index
     @appointments = Appointment.where(user_id: current_user.id)
     if @appointments.length == 0
       flash[:alert] = "You have no appointments."
     end
   end
+  ```
 
   Built in devise methods
+  ```
   <% if !user_signed_in? %>
   <%if current_user %>
-
+```
 
 ## Plans for future
 
