@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
     @appointment.user_id = current_user.id
     if @appointment.save
       flash[:success] = "Your Appointment has been set !"
-      redirect_to appointments_url
+      redirect_to appointments_path
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class AppointmentsController < ApplicationController
   def destroy
     @appointment.destroy
     respond_to do |format|
-      format.html { redirect_to appointments_url, notice: 'Appointment was successfully destroyed.' }
+      format.html { redirect_to appointments_path, notice: 'Appointment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
