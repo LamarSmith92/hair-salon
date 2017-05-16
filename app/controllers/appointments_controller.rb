@@ -1,6 +1,8 @@
 class AppointmentsController < ApplicationController
 
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+    before_filter :authorize_admin, except: [:index, :show]
 
 
   def index
@@ -11,13 +13,14 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+
     @appointment = Appointment.new
   end
 
   def create
 
   @appointment = Appointment.new(appointment_params)
-
+  @appointment.user_id = current_user.id
       if @appointment.save
         flash[:success] = "Your Appointment has been set !"
       redirect_to root_path
