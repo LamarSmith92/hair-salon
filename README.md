@@ -43,8 +43,6 @@ This page allows a client/user to book an appointment and select the best date a
 4. SASS
 5. CSS3
 6. Gems:
-  - Will Paginate
-  - Chartkick
 7.Bootstrap
 8.Normalize
 9.Devise
