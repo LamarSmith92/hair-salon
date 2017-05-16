@@ -2,40 +2,51 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
 
-<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
 <div class="button">Sisterz Beauty Salon</div>
 <link async href="http://fonts.googleapis.com/css?family=Warnes" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 
-<img src="https://image.ibb.co/m5VGBQ/afro.png" alt="afro" border="0">
+<img src="https://image.ibb.co/m5VGBQ/afro.png" alt="afro" border="0" align="center">
+
 <div class="intro-header">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
 
-        <ul class="list-inline intro-social-buttons">
-          <li>
-            <%= link_to raw("<i class=\"fa fa-calendar\"> Book Now</i>"),
+        <div id="board">
+          <ul class="list-inline intro-social-buttons">
+            <li>
+              <%= link_to raw("<i class=\"fa fa-calendar\"> Book Now</i>"),
                             new_appointment_path,
                             :class => 'btn btn-success btn-lg' %>
-          </li>
-          <li>
-            <%= link_to raw("<i class=\"fa fa-heart\">		&nbsp;&nbsp;&nbsp;Styles		&nbsp;&nbsp;&nbsp;</i>"),
+            </li>
+            <li>
+              <%= link_to raw("<i class=\"fa fa-heart\">		&nbsp;&nbsp;&nbsp;Styles		&nbsp;&nbsp;&nbsp;</i>"),
                                 styles_path,
                                 :class => 'btn btn-danger btn-lg' %>
-          </li>
-          <li>
-            <%= link_to raw("<i class=\"fa fa-user-plus\">	New Client	</i>"),
-                              new_client_path,
-                              :class => 'btn btn-danger btn-lg' %>
-          </li>
-          <li>
-            <%= link_to raw("<i class=\"fa fa-address-card-o\">	&nbsp;&nbsp;	&nbsp;About	&nbsp;&nbsp;	&nbsp;</i>"),
+            </li>
+
+            <li>
+              <%= link_to raw("<i class=\"fa fa-address-card-o\">	&nbsp;&nbsp;	&nbsp;About	&nbsp;&nbsp;	&nbsp;</i>"),
                               about_path,
                               :class => 'btn btn-danger btn-lg' %>
-          </li>
-        </ul>
+            </li>
+            <%if current_user %>
+            <li>
+              <%= link_to raw("<i class=\"fa fa-user-plus\">	View Appointments	</i>"),
+                                                  appointments_path,
+                                                  :class => 'btn btn-danger btn-lg' %>
+            </li>
+          </ul>
+          <% end %>
+          <br>
+          <% if !user_signed_in? %>
+          <%= link_to 'Sign in', new_user_session_path, :class => 'new_button'  %>
+          &nbsp;
+          <%= link_to "Sign up!",  new_user_registration_path, :class => 'new_button' %>
+          <% end %>
+
+        </div>
       </div>
     </div>
   </div>
-
 </div>

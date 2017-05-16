@@ -1,4 +1,4 @@
-<% if current_admin %>
+
 <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
 
 <%- model_class = Appointment -%>
@@ -32,9 +32,10 @@
       <td><%= appointment.notes %></td>
 
       <td>
-
+        <% if current_user%>
         <%= link_to "Delete", appointment_path(appointment), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger' %>
       </td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
@@ -43,4 +44,3 @@
 <%= link_to "Back",
     root_path,
     :class => 'btn btn-primary' %>
-<% end %>
