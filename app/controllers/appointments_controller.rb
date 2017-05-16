@@ -23,9 +23,6 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  def show
-    @appointments = Appointment.where(user_id: current_user.id)
-  end
 
   def destroy
     @appointment.destroy
