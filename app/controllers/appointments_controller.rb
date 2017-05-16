@@ -4,7 +4,7 @@ class AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.where(user_id: current_user.id)
     if @appointments.length == 0
-      flash[:alert] = "You have no appointments. Create one now to get started."
+      flash[:alert] = "You have no appointments."
     end
   end
 
@@ -23,6 +23,9 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def show
+    @appointments = Appointment.where(user_id: current_user.id)
+  end
 
   def destroy
     @appointment.destroy

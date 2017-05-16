@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <title>HairSalon</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
-
   <body>
-
     <% if user_signed_in? %>
-
     <br>
 <li><%= link_to 'Logout', destroy_user_session_path, :class=>'button_two', :method => :delete %></li>
 <% end %>
-
-
     <% flash.each do |key, value| %>
    <div class="alert alert-<%= key %>"><%= value %></div>
  <% end %>
