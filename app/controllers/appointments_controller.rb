@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
     @appointment.user_id = current_user.id
     if @appointment.save
       flash[:success] = "Your Appointment has been set !"
-      redirect_to appointments_path
+      redirect_to appointments_url
     else
       render 'new'
     end
