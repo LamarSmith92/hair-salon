@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
-
-  devise_for :admins
-  root 'home#index'
   resources :appointments
   resources :clients
+  devise_for :admins
+  root 'home#index'
   get '/about', to: 'about#index'
   get '/booking', to: 'booking#index'
   get '/styles', to: 'styles#index'
