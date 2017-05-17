@@ -123,5 +123,5 @@ Flash Notices
 
 - [Heroku](https://gentle-meadow-28268.herokuapp.com/)
 
-#Email-tester@test.com
-#Password-password
+# Email: tester@test.com
+# Password: password
